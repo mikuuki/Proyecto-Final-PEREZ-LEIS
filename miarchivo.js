@@ -55,20 +55,19 @@ function respuestaClick2() {
 
   Toastify({
     text: "Gastos agregados",
-    duration: 3000
-  }).showToast();
+    duration: 5000,
+    style: {background: 'linear-gradient(to right, #000000, #97989a)'}}).showToast();
 
 
   padre2.push(li);
   padre.push(li);
   padre3.push(li);
-
-
 }
 
 console.log(fecha.length)
 console.log(descripcion.length)
 console.log(monto.length)
+
 let boton3 = document.getElementById("btn2").addEventListener("click", respuestaClick3)
 function respuestaClick3() {
   Swal.fire({
@@ -78,8 +77,7 @@ function respuestaClick3() {
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
     cancelButtonColor: "#d33",
-    confirmButtonText: "Si, pagar!"
-
+    confirmButtonText: "Si, pagar!",
   }).then((result) => {
     if (result.isConfirmed) {
       Swal.fire({
