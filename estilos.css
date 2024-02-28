@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+}
+body {
+        background-color: rgba(52, 51, 51, 0.24);
+}
+
+header {
+    position: static;
+    background-color: rgb(52, 51, 51);
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 1.2em 3em 0 3em;
+}
+
+header img {
+    width: 16em;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header nav ul a {
+    padding: 0 3em;
+    font-size: 1.5em;
+    color: white;
+    background-color: rgb(151, 152, 154);
+}
+
+header a:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+
+.inicio {
+    margin: 1em 0;
+}
+
+#ingresar {
+    background-color: none;
+    border-width: 0;
+}
+
+.inicio button {
+    display: inline-block;
+    text-align: start;
+    background-color: rgb(151, 152, 154);
+    color: white;
+    font-size: 2em;
+    font-weight: lighter;
+    padding: 0 1.2em .1em 3em;
+}
+
+.inicio button:hover {
+    background-color: rgb(252, 252, 252);
+    color: black;
+    cursor: pointer;
+
+
+
+}
+
+.inicio ul {
+    display: block;
+    text-align: center;
+    font-size: 2em;
+    padding-bottom: 0em;
+}
+
+
+
+
+
+.botones {
+    display: flex;
+    justify-content: space-around;
+}
+
+.botones button {
+    border-width: .1em;
+    padding: .2em 1em;
+    background-color: rgb(255, 255, 255);
+    color: black;
+
+    font-weight: bold;
+}
+
+.botones button:hover {
+    border-width: .1em;
+    padding: 0 1em;
+    background-color: rgb(151, 152, 154);
+    color: rgb(255, 255, 255);
+
+}
+
+.botones a {
+    color: black;
+    font-size: 1.2em;
+}
+
+.botones a:hover {
+    color: white;
+    font-size: 1.2em;
+}
+
+
+
+
+.detalle {
+    background-color: rgb(151, 152, 154);
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin: .8em 0;
+    padding: 0 6em;
+}
+
+.detalle h3 {
+    font-size: 1.3em;
+    color: rgb(255, 255, 255);
+    padding-bottom: .2em;
+}
+
+.detalle li {
+    font-family: 'Courier New';
+    font-size: 1.2em;
+}
+
+.pdf {
+    padding-left: 3em;
+    padding-top: 2em;
+    display: flex;
+    gap: 2em;
+}
+
+.pdf li img {
+    width: 10em;
+}
+
+
+.lectura h2 {
+    font-size: 4em;
+
+}
+
+.lectura p {
+    font-size: 3em;
+
+}
+
+.lectura {
+    width: 70em;
+    padding-left: 3em;
+    padding-top: 1em;
+}
+
+.lectura2 {
+    background-color: rgba(52, 51, 51, 0.24);
+    ;
+}
+
+
+.medios ul {
+    padding: 5em;
+    padding-top: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2em;
+}
+
+.medios img {
+    width: 15em;
+}
+.botones {
+    margin-top: 1em;
+}
+.botones .comenzar {
+
+    font-size: 2em;
+    padding: 0 .5em 0 .5em;
+}
+
+
+.botones:hover {
+    margin-top: 1em;
+}
+.botones .comenzar:hover {
+
+    font-size: 2em;
+    padding: 0 .5em 0 .5em;
+}
