@@ -1,8 +1,9 @@
 let boton = document.getElementById("ingresar").addEventListener("click", respuestaClick)
 function respuestaClick() {
   usuario.innerText = prompt("Ingresa Nombre y Apellido")
-  console.log(usuario.innerText)
   total.innerText = Number(prompt("Ingresa el monto a abonar"))
+
+  console.log(usuario.innerText)
   console.log(total.innerText)
 };
 
@@ -36,8 +37,7 @@ for (const montoAgregado of monto) {
 
 
 
-let boton2 = document.getElementById("btn1").addEventListener("click", respuestaClick2)
-function respuestaClick2() {
+let boton2 = document.getElementById("btn1").addEventListener("click", function respuestaClick2 (event) {
 
   let nuevaFecha = document.getElementById("fecha");
   let li = document.createElement("li");
@@ -61,14 +61,13 @@ function respuestaClick2() {
     duration: 5000,
     style: { background: 'linear-gradient(to right, #000000, #97989a)' }
   }).showToast();
-
-
+console.log(event.value())
 
   formfecha.push(li);
   formdescripcion.push(li);
   formmonto.push(li);
 
-}
+})
 console.log(fecha.length)
 console.log(descripcion.length)
 console.log(monto.length)
