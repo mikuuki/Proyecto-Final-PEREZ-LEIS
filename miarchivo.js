@@ -14,7 +14,7 @@ const fecha = [];
 for (const fechaAgregada of fecha) {
   let li = document.createElement("li");
   li.innerHTML = fechaAgregada
-  formfecha.appendChild(li).length;
+  formfecha.appendChild(li);
 
 }
 let formdescripcion = document.getElementById("descripcion");
@@ -22,7 +22,7 @@ const descripcion = [];
 for (const descripcionAgregada of descripcion) {
   let li = document.createElement("li");
   li.innerHTML = descripcionAgregada
-  formdescripcion.appendChild(li).length;
+  formdescripcion.appendChild(li);
 
 }
 let formmonto = document.getElementById("monto");
@@ -30,7 +30,7 @@ const monto = [];
 for (const montoAgregado of monto) {
   let li = document.createElement("li");
   li.innerHTML = montoAgregado
-  formmonto.appendChild(li).length;
+  formmonto.appendChild(li);
 
 }
 
