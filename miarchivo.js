@@ -1,44 +1,46 @@
-let boton = document.getElementById("ingresar").addEventListener("click", respuestaClick)
-function respuestaClick() {
+let boton = document.getElementById("ingresar").addEventListener("click", function respuestaClick() {
   usuario.innerText = prompt("Ingresa Nombre y Apellido")
   total.innerText = Number(prompt("Ingresa el monto a abonar"))
 
   console.log(usuario.innerText)
   console.log(total.innerText)
-};
+});
 
 
 
-let formfecha = document.getElementById("fecha_agregada");
+
+
+
+let formfecha = document.getElementById("fecha");
 const fecha = [];
 for (const fechaAgregada of fecha) {
   let li = document.createElement("li");
-  li = fechaAgregada
+  li.innerHTML = fechaAgregada
   formfecha.appendChild(li);
-
+  console.log(fechaAgregada)
 }
-let formdescripcion = document.getElementById("descripcion_agregada");
+let formdescripcion = document.getElementById("descripcion");
 const descripcion = [];
 for (const descripcionAgregada of descripcion) {
   let li = document.createElement("li");
-  li = descripcionAgregada
+  li.innerHTML = descripcionAgregada
   formdescripcion.appendChild(li);
-
+  console.log(descripcionAgregada)
 }
-let formmonto = document.getElementById("monto_agregado");
+let formmonto = document.getElementById("monto");
 const monto = [];
 for (const montoAgregado of monto) {
   let li = document.createElement("li");
-  li = montoAgregado
+  li.innerHTML = montoAgregado
   formmonto.appendChild(li);
-
+  console.log(montoAgregado)
 }
 
 
 
 
-let boton2 = document.getElementById("btn1").addEventListener("click", function respuestaClick2 (event) {
 
+let boton2 = document.getElementById("btn1").addEventListener("click", function respuestaClick2(event) {
   let nuevaFecha = document.getElementById("fecha");
   let li = document.createElement("li");
   li.innerHTML = nuevaFecha;
@@ -61,12 +63,11 @@ let boton2 = document.getElementById("btn1").addEventListener("click", function 
     duration: 5000,
     style: { background: 'linear-gradient(to right, #000000, #97989a)' }
   }).showToast();
-console.log(event.value())
+  console.log(event.value())
 
   formfecha.push(li);
-  formdescripcion.push(li);
+  formdescripcion.push(li); 
   formmonto.push(li);
-
 })
 console.log(fecha.length)
 console.log(descripcion.length)
@@ -92,10 +93,7 @@ function respuestaClick3() {
       });
     }
   });
-
   localStorage.clear()
-
-
 }
 const detalle = [{ fecha }, { descripcion }, { monto }];
 function guardarLocal() {
