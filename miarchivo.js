@@ -4,69 +4,75 @@ function respuestaClick() {
   console.log(usuario.innerText)
   total.innerText = Number(prompt("Ingresa el monto a abonar"))
   console.log(total.innerText)
-  localStorage.setItem("usuario", respuestaClick)
 };
 
 
 
-let padre = document.getElementById("fecha");
+let formfecha = document.getElementById("fecha_agregada");
 const fecha = [];
 for (const fechaAgregada of fecha) {
   let li = document.createElement("li");
-  li.innerHTML = fechaAgregada
-  padre.appendChild(li);
+  li = fechaAgregada
+  formfecha.appendChild(li);
 
 }
-let padre2 = document.getElementById("descripcion");
+let formdescripcion = document.getElementById("descripcion_agregada");
 const descripcion = [];
 for (const descripcionAgregada of descripcion) {
   let li = document.createElement("li");
-  li.innerHTML = descripcionAgregada
-  padre2.appendChild(li);
+  li = descripcionAgregada
+  formdescripcion.appendChild(li);
 
 }
-let padre3 = document.getElementById("monto");
+let formmonto = document.getElementById("monto_agregado");
 const monto = [];
 for (const montoAgregado of monto) {
   let li = document.createElement("li");
-  li.innerHTML = montoAgregado
-  padre3.appendChild(li);
+  li = montoAgregado
+  formmonto.appendChild(li);
 
 }
+
+
+
+
 let boton2 = document.getElementById("btn1").addEventListener("click", respuestaClick2)
 function respuestaClick2() {
 
-  let nuevaFecha = prompt("Ingresa dd/mm/aaaa");
+  let nuevaFecha = document.getElementById("fecha");
   let li = document.createElement("li");
   li.innerHTML = nuevaFecha;
-  padre.appendChild(li);
+  formfecha.appendChild(li);
 
 
-  let nuevaDescrip = prompt("Ingresa descripción");
+  let nuevaDescrip = document.getElementById("descripcion");
   let li2 = document.createElement("li");
   li2.innerHTML = nuevaDescrip;
-  padre2.appendChild(li2);
+  formdescripcion.appendChild(li2);
 
 
-  let nuevoMonto = prompt("Ingresa monto");
+  let nuevoMonto = document.getElementById("monto");
   let li3 = document.createElement("li");
   li3.innerHTML = nuevoMonto;
-  padre3.appendChild(li3);
+  formmonto.appendChild(li3);
 
   Toastify({
     text: "Gastos agregados",
     duration: 5000,
-    style: {background: 'linear-gradient(to right, #000000, #97989a)'}}).showToast();
+    style: { background: 'linear-gradient(to right, #000000, #97989a)' }
+  }).showToast();
 
 
-  padre2.push(li);
-  padre.push(li);
-  padre3.push(li);
+
+  formfecha.push(li);
+  formdescripcion.push(li);
+  formmonto.push(li);
+
 }
-
 console.log(fecha.length)
 console.log(descripcion.length)
 console.log(monto.length)
+
 
 let boton3 = document.getElementById("btn2").addEventListener("click", respuestaClick3)
 function respuestaClick3() {

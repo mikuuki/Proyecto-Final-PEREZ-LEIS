@@ -45,6 +45,8 @@ header a:hover {
 }
 
 
+
+
 .inicio {
     margin: 1em 0;
 }
@@ -125,7 +127,7 @@ header a:hover {
     align-items: start;
     justify-content: space-between;
     margin: .8em 0;
-    padding: 0 6em;
+    padding: 0 10em;
 }
 
 .detalle h3 {
@@ -234,4 +236,13 @@ footer p {
 }
 .seguinos {
     padding-left: 2.2em;
+}
+
+
+#form ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    
 }
