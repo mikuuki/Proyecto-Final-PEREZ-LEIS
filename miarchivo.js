@@ -93,7 +93,7 @@ function respuestaClick3() {
     
 }
 const detalle = [{fecha},{descripcion},{monto}];
-const guardarLocal = (clave, valor) => { localStorage.setItem(clave, valor) };
+function guardarLocal(){ localStorage.setItem("gastos", detalle) };
 guardarLocal("listaGastos", JSON.stringify(detalle));
 
 
