@@ -461,3 +461,15 @@ label {
     text-decoration: underline;
 
 }
+
+
+#fecha-hora {
+    text-align: right;
+    display: block;
+    font-weight: bold;
+    color: #ffffffb9;
+    padding: 0 2em;
+    text-transform: capitalize;
+    font-family: 'Courier New', Courier, monospace;
+
+}

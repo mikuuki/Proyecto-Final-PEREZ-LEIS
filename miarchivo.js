@@ -68,3 +68,23 @@ function actualizarLista() {
 
 
 
+let fechaHoraElemento = document.getElementById("fecha-hora");
+
+function obtenerFechaHora() {
+    // Hace una solicitud a la API de WorldTimeAPI para obtener la fecha y hora actual
+    fetch('https://worldtimeapi.org/api/ip')
+        .then(response => response.json())
+        .then(data => {
+            let fechaHora = new Date(data.datetime);
+            let opciones = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' };
+            let formatoFechaHora = fechaHora.toLocaleDateString('es-ES', opciones);
+            fechaHoraElemento.textContent = formatoFechaHora;
+        })
+        .catch(error => {
+            console.error('Error al obtener la fecha y hora:', error);
+        });
+}
+
+obtenerFechaHora();
+
+setInterval(obtenerFechaHora, 1000);
