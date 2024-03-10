@@ -4,53 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PRE Entrega 3 Perez Leis</title>
+    <title>PROYECTO FINAL PEREZ LEIS</title>
     <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
 </head>
 
-<body class="lectura2">
+<body>
     <header>
-      <img src="logo.png" alt="logo">
+            <img class="logo" src="/imagenes/logo.png" alt="logo" onclick="location.href='index.html'" >
         <nav>
             <ul>
                 <li><a href="index.html"> Información </a></li>
-                <li><a href="resumenes.html"> Resúmenes </a></li>
+                <li><a href="comprobantes.html"> Comprobantes </a></li>
                 <li><a href="pagos.html"> Pagos </a></li>
-
             </ul>
         </nav>
     </header>
-    <main>
-        <div class="inicio">
-            <button id="ingresar">Ingresar</button>
-            <ul>
-                <li>
-                    <h3 id="usuario"></h3>
-                </li>
-                <li>
-                    <p id="total"></p>
-                </li>
-            </ul>
+
+
+
+
+
+    <div class="presentacion">
+        <div class="titulo">
+            <h1>¡Bienvenidos!</h1>
+            <p>Somos un medio de registro de gastos para organizar tus cuentas a través del pago online en donde sea que
+                estés. Ordena tus gastos hoy!
+            </p>
+            <button class="btn-comenzar" type="submit" onclick="location.href='comenzar.html'" >Comenzar</button>
         </div>
-
-    </main>
-    <div class="lectura">
-        <h2>Bienvenidos!</h2>
-        <p>Somos un medio de registro de gastos para organizar tus cuentas a través del pago online en donde sea que estés. Ordena tus gastos hoy!
-        </p>
-        <button class="botones"><a class="comenzar" href="agregar.html">Comenzar</a></button>
+        <img src="/imagenes/ahorro.png" alt="">
     </div>
-    <div class="medios"> 
-        <ul>
-            <li><a href=""><img src="imagenes/banco icon.png" alt=""></a></li>
-            <li><a href=""><img src="imagenes/mp icon.png" alt=""></a></li>
-            <li><a href=""><img src="imagenes/link icon.png" alt=""></a></li>
-            <li><a href=""><img src="imagenes/PagoFacil_LOGO_Cuadrado.svg" alt=""></a></li>
-            <li><a href=""><img src="imagenes/rp icon.png" alt=""></a></li>
-        </ul>
 
+
+
+
+
+    <div class="medios">
+        <h3>Podrás abonar con las siguientes opciones </h3>
+        <ul>
+            <li><a href=""><img src="/imagenes/banco icon.png" alt=""></a></li>
+            <li><a href=""><img src="/imagenes/mp icon.png" alt=""></a></li>
+            <li><a href=""><img src="/imagenes/link icon.png" alt=""></a></li>
+            <li><a href=""><img src="/imagenes/PagoFacil_LOGO_Cuadrado.svg" alt=""></a></li>
+            <li><a href=""><img src="/imagenes/rp icon.png" alt=""></a></li>
+        </ul>
+        
     </div>
 
 
@@ -59,35 +57,35 @@
 
 
     <footer>
-        <div class="divredes" >
-            <div class="seguinos">
+        <div class="footer-contacto">
+            <div class="redes">
                 <h3>¡Seguinos en nuestras redes!</h3>
-                <ul class="redes">
-                    <li><img src="imagenes/icono ig.svg" alt=""></li>
-                    <li><img src="imagenes/icono fb.svg" alt=""></li>
-                    <li><img src="imagenes/icono linkedin.svg" alt=""></li>
-                    <li><img src="imagenes/icono x.svg" alt=""></li>
-                    <li><img src="imagenes/icono yt.svg.svg" alt=""></li>
+                <ul>
+                    <li><a href=""><img src="imagenes/icono ig.svg" alt=""></a></li>
+                    <li><a href=""><img src="imagenes/icono fb.svg" alt=""></a></li>
+                    <li><a href=""><img src="imagenes/icono linkedin.svg" alt=""></a></li>
+                    <li><a href=""><img src="imagenes/icono x.svg" alt=""></a></li>
+                    <li><a href=""><img src="imagenes/icono yt.svg.svg" alt=""></a></li>
                 </ul>
-                <img src="imagenes/footer.png" alt="">
+                <img class="central" src="/imagenes/footer.png" alt="">
             </div>
+
             <div class="contacto">
                 <h3>Contacto</h3>
                 <ol>
-                    <li> -Teléfonos: 0810-000-0000 / 0810-000-0001 para todo el país.</li>
-                    <li> -También podés contactarnos por WhatsApp  <img class="wp" src="imagenes/icono whatsapp.png"
-                            alt=""> todos los días, las 24 horas.</li>
+                    <li>Teléfonos: 0810-000-0000 / 0810-000-0001 para todo el país.</li>
+                    <li>También podés contactarnos por WhatsApp todos los días, las 24 horas <img class="wp" src="imagenes/icono whatsapp.png"  alt=""> </li>
                 </ol>
             </div>
         </div>
-        <p class="copyright">©Copyright 2001-2024. Todos los derechos reservados. Prohibida la duplicación, distribución
+
+
+        <p>©Copyright 2001-2024. Todos los derechos reservados Proyecto Final PEREZ LEIS. Prohibida la duplicación, distribución
             o almacenamiento en cualquier medio.</p>
+
     </footer>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="miarchivo.js"></script>
+    <script src="/miarchivo.js"></script>
 </body>
 
 </html>
