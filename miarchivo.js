@@ -15,41 +15,61 @@ dni.innerHTML = localStorage.getItem("dniIngresado");
 
 
 let btnAgregar = document.getElementById("btnAgregar");
-btnAgregar.addEventListener("click", cargar);
+
 //Agregar Gastos
 let gastos = [];
 
-function cargar() {
+
+function cargarGastos(nombre, importe, fecha) {
+    return new Promise((resolve, reject) => {
+        if (nombre && importe && fecha) {
+            let nuevoGasto = {
+                nombre: nombre,
+                importe: importe,
+                fecha: fecha
+            };
+            gastos.push(nuevoGasto);
+            limpiarCampos();
+            actualizarLista();
+
+            localStorage.setItem("gastos", JSON.stringify(gastos));
+
+            resolve("Agregado");
+        } else {
+            reject("Vacio");
+        }
+    });
+}
+
+btnAgregar.addEventListener("click", function () {
     let nombre = document.getElementById("nombreGastos").value;
     let importe = document.getElementById("importeGastos").value;
     let fecha = document.getElementById("fechaGastos").value;
 
-    if (nombre && importe && fecha) {
-        let nuevoGasto = {
-            nombre: nombre,
-            importe: importe,
-            fecha: fecha
-        };
-        gastos.push(nuevoGasto);
-        limpiarCampos();
-        actualizarLista();
-
-        localStorage.setItem("gastos", JSON.stringify(gastos));
-
-        Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Agregado",
-            showConfirmButton: false,
-            width: 220,
-            timer: 900
+    cargarGastos(nombre, importe, fecha)
+        .then(successMessage => {
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: successMessage,
+                showConfirmButton: false,
+                width: 220,
+                timer: 900
+            });
+        })
+        .catch(errorMessage => {
+            Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: errorMessage,
+                showConfirmButton: false,
+                width: 220,
+                timer: 900
+            });
+        })
+        .finally(() => {
         });
-    } else {
-        return;
-    }
-}
-
-
+});
 
 
 function limpiarCampos() {
@@ -74,11 +94,9 @@ function actualizarLista() {
     totalElement.textContent = `Total $${total.toFixed(2)}`;
 }
 
-
 let fechaHoraElemento = document.getElementById("fecha-hora");
-
 function obtenerFechaHora() {
-    // Hace una solicitud a la API de WorldTimeAPI para obtener la fecha y hora actual
+    // Solicitud a la API de WorldTimeAPI para obtener la fecha y hora actual
     fetch('https://worldtimeapi.org/api/ip')
         .then(response => response.json())
         .then(data => {
@@ -93,7 +111,6 @@ function obtenerFechaHora() {
 }
 obtenerFechaHora();
 setInterval(obtenerFechaHora, 1000);
-
 
 
 
