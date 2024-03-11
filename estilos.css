@@ -428,6 +428,7 @@ label {
     font-weight: 540;
     font-size: 1.2em;
     padding: .5em 1.8em;
+    text-align: end;
 }
 
 .btnCargado {
@@ -452,15 +453,29 @@ label {
 }
 
 
-
-
-#pagos h2 {
-    padding: 1em 30%;
-    font-size: 1.8em;
+#detallePagos {
+    width: 1000px;
+    height: auto;
+    margin: 1em auto;
+    text-align: end;
+    font-size: 1.5em;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
     color: #fff;
-    text-decoration: underline;
-
+    padding: .2em 3em;
+    background-color: #1f1e1e;
+    border-radius: 5px;
 }
+
+.tituloPagos {
+    font-size: 2em;
+    text-align: center;
+    color: #fff;
+}
+
+
+
+
 
 
 #fecha-hora {

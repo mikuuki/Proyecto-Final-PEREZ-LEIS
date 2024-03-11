@@ -18,6 +18,7 @@ let btnAgregar = document.getElementById("btnAgregar");
 btnAgregar.addEventListener("click", cargar);
 //Agregar Gastos
 let gastos = [];
+
 function cargar() {
     let nombre = document.getElementById("nombreGastos").value;
     let importe = document.getElementById("importeGastos").value;
@@ -32,7 +33,8 @@ function cargar() {
         gastos.push(nuevoGasto);
         limpiarCampos();
         actualizarLista();
-            } else {
+
+        localStorage.setItem("gastos", JSON.stringify(gastos));
 
         Swal.fire({
             position: "top-end",
@@ -42,13 +44,21 @@ function cargar() {
             width: 220,
             timer: 900
         });
+    } else {
+        return;
     }
 }
+
+
+
+
 function limpiarCampos() {
     document.getElementById("nombreGastos").value = "";
     document.getElementById("importeGastos").value = "";
     document.getElementById("fechaGastos").value = "";
 }
+
+
 function actualizarLista() {
     let listaDeGastos = document.getElementById("listaDeGastos");
 
@@ -56,16 +66,13 @@ function actualizarLista() {
     listaDeGastos.innerHTML = "";
     gastos.forEach(gasto => {
         let nuevoElemento = document.createElement("li");
-        nuevoElemento.textContent = `${gasto.nombre.toUpperCase()} - $${gasto.importe} - ${gasto.fecha}`;
+        nuevoElemento.textContent = `${gasto.nombre.toUpperCase()} __ $${gasto.importe} __ ${gasto.fecha}`;
         listaDeGastos.appendChild(nuevoElemento);
         total += parseFloat(gasto.importe);
     });
     let totalElement = document.getElementById("total");
     totalElement.textContent = `Total $${total.toFixed(2)}`;
 }
-
-
-
 
 
 let fechaHoraElemento = document.getElementById("fecha-hora");
@@ -84,7 +91,38 @@ function obtenerFechaHora() {
             console.error('Error al obtener la fecha y hora:', error);
         });
 }
-
 obtenerFechaHora();
-
 setInterval(obtenerFechaHora, 1000);
+
+
+
+
+
+
+
+// ... (tu código existente)
+
+// Nueva función para almacenar el contenido de listaDeGastos en localStorage
+function almacenarDetallePagos() {
+    let listaDeGastos = document.getElementById("listaDeGastos");
+    let detallePagosContenido = listaDeGastos.innerHTML;
+    localStorage.setItem("detallePagos", detallePagosContenido);
+}
+
+// Asignar esta función al evento click del botón btnDetallePagos
+let btnDetallePagos = document.getElementById("btnDetallePagos");
+btnDetallePagos.addEventListener("click", function () {
+    almacenarDetallePagos();
+    location.href = 'pagos.html';
+});
+
+// ... (resto de tu código)
+
+// Obtener el contenido de listaDeGastos almacenado en localStorage
+let detallePagosContenido = localStorage.getItem("detallePagos");
+
+// Insertar el contenido en el elemento con el id detallePagos
+document.getElementById("detallePagos").innerHTML = detallePagosContenido;
+
+
+
