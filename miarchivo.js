@@ -99,29 +99,20 @@ setInterval(obtenerFechaHora, 1000);
 
 
 
-
-// ... (tu código existente)
-
-// Nueva función para almacenar el contenido de listaDeGastos en localStorage
 function almacenarDetallePagos() {
     let listaDeGastos = document.getElementById("listaDeGastos");
     let detallePagosContenido = listaDeGastos.innerHTML;
     localStorage.setItem("detallePagos", detallePagosContenido);
 }
 
-// Asignar esta función al evento click del botón btnDetallePagos
 let btnDetallePagos = document.getElementById("btnDetallePagos");
 btnDetallePagos.addEventListener("click", function () {
     almacenarDetallePagos();
     location.href = 'pagos.html';
 });
 
-// ... (resto de tu código)
-
-// Obtener el contenido de listaDeGastos almacenado en localStorage
 let detallePagosContenido = localStorage.getItem("detallePagos");
 
-// Insertar el contenido en el elemento con el id detallePagos
 document.getElementById("detallePagos").innerHTML = detallePagosContenido;
 
 
